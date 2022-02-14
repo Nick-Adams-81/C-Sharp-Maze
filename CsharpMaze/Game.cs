@@ -4,6 +4,9 @@ namespace CsharpMaze
 {
     public class Game
     {
+
+        private World myWorld;
+        private Player myPlayer;
        
 
            public void Start()
@@ -21,17 +24,57 @@ namespace CsharpMaze
                { "=", "=", "=", "=", "=", "=", "=" }
             };
 
-            World world = new World(grid);
-            world.Draw();
+            myWorld = new World(grid);
+            
+            myPlayer = new Player(0, 2);
 
-            Player player = new Player(0, 2);
-            player.Draw();
-
-
-            //WriteLine("\n\npress any key top exit...");
-
-            ReadKey(true);
+            RunGameLoop();
+          
             }
+
+        private void DrawFrame()
+        {
+            Clear();
+            myWorld.Draw();
+            myPlayer.Draw();
+        }
+         
+        private void HandlePlayerInput()
+        {
+            ConsoleKeyInfo keyInfo = ReadKey(true);
+            ConsoleKey key = keyInfo.Key;
+            switch(key)
+            {
+                case ConsoleKey.UpArrow:
+                    myPlayer.y -= 1;
+                    break;
+                case ConsoleKey.DownArrow:
+                    myPlayer.y += 1;
+                    break;
+                case ConsoleKey.LeftArrow:
+                    myPlayer.x -= 1;
+                    break;
+                case ConsoleKey.RightArrow:
+                    myPlayer.x += 1;
+                    break;
+                default: break;
+            }
+        }
+
+
+        private void RunGameLoop()
+        {
+            while (true)
+            {
+                DrawFrame();
+                HandlePlayerInput();
+
+                System.Threading.Thread.Sleep(20);
+
+
+                break;
+            }
+        }
    
     }
 }
