@@ -30,7 +30,18 @@ namespace CsharpMaze
                     Write(el);
                 }
             }
-        }           
+        }
+
+        public bool positionWalkable(int x, int y)
+        {
+
+            if (x < 0 || y < 0 || x >= cols || y >= rows)
+            {
+                return false;
+            }
+
+            return Grid[y, x] == " " || Grid[y, x] == "X";
+        }
 
 
         

@@ -9,15 +9,13 @@ namespace CsharpMaze
            public void Start()
             {
    
-            //SetCursorPosition(4, 2);
-            //Write("X");
-
+      
 
             string[,] grid =
             {
                { "=", "=", "=", "=", "=", "=", "=" },
                { "=", " ", "=", " ", " ", " ", "X" },
-               { "O", " ", "=", " ", "=", " ", "=" },
+               { " ", " ", "=", " ", "=", " ", "=" },
                { "=", " ", "=", " ", "=", " ", "=" },
                { "=", " ", " ", " ", "=", " ", "=" },
                { "=", "=", "=", "=", "=", "=", "=" }
@@ -26,7 +24,11 @@ namespace CsharpMaze
             World world = new World(grid);
             world.Draw();
 
-            WriteLine("\n\npress any key top exit...");
+            Player player = new Player(0, 2);
+            player.Draw();
+
+
+            //WriteLine("\n\npress any key top exit...");
 
             ReadKey(true);
             }
