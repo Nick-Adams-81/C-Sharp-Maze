@@ -6,7 +6,10 @@ namespace CsharpMaze
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello!");
+          
+                Game currentGame = new Game();
+                currentGame.Start();
+            
         }
     }
 }
