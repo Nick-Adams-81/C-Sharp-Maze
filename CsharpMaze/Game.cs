@@ -32,6 +32,27 @@ namespace CsharpMaze
           
             }
 
+        private void displayIntro()
+        {
+            WriteLine("Welcome to the maze!!");
+            WriteLine("\nInstructions");
+            WriteLine("> Use arrow keys to move");
+            Write("> Try to reach the goal, which looks like this: ");
+            ForegroundColor = ConsoleColor.Green;
+            WriteLine("X");
+            WriteLine("Press any key to start");
+            ReadKey(true);
+        }
+
+        private void displayOutro()
+        {
+            Clear();
+            WriteLine("You got out of the maze!");
+            WriteLine("Thanks for playing!!!");
+            WriteLine("Press any key to exit");
+            ReadKey(true);
+        }
+
         private void DrawFrame()
         {
             Clear();
