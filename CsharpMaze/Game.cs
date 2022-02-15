@@ -11,7 +11,9 @@ namespace CsharpMaze
 
            public void Start()
             {
-   
+
+            Title = "Welcome to the maze!!!";
+            CursorVisible = false;
       
 
             string[,] grid =
@@ -40,6 +42,7 @@ namespace CsharpMaze
             Write("> Try to reach the goal, which looks like this: ");
             ForegroundColor = ConsoleColor.Green;
             WriteLine("X");
+            ResetColor();
             WriteLine("Press any key to start");
             ReadKey(true);
         }
@@ -100,6 +103,7 @@ namespace CsharpMaze
 
         private void RunGameLoop()
         {
+            displayIntro();
             while (true)
             {
                 DrawFrame();
@@ -112,10 +116,9 @@ namespace CsharpMaze
                 
 
                 System.Threading.Thread.Sleep(20);
-
-
-               
+  
             }
+            displayOutro();
         }
    
     }

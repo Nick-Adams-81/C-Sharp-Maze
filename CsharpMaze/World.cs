@@ -27,6 +27,14 @@ namespace CsharpMaze
                 {
                     string el = Grid[i, j];
                     SetCursorPosition(j, i);
+
+                    if(el == "X")
+                    {
+                        ForegroundColor = ConsoleColor.Green
+;                    } else
+                    {
+                        ForegroundColor = ConsoleColor.White;
+                    }
                     Write(el);
                 }
             }
