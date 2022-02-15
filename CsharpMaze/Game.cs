@@ -83,6 +83,12 @@ namespace CsharpMaze
             {
                 DrawFrame();
                 HandlePlayerInput();
+                string elemntAtPlayerPos = myWorld.getElementAt(myPlayer.x, myPlayer.y);
+                if(elemntAtPlayerPos == "X")
+                {
+                    break;
+                }
+                
 
                 System.Threading.Thread.Sleep(20);
 

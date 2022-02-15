@@ -32,6 +32,11 @@ namespace CsharpMaze
             }
         }
 
+        public string getElementAt(int x, int y)
+        {
+            return Grid[y, x];
+        }
+
         public bool positionWalkable(int x, int y)
         {
 
