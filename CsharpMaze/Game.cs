@@ -46,16 +46,31 @@ namespace CsharpMaze
             switch(key)
             {
                 case ConsoleKey.UpArrow:
-                    myPlayer.y -= 1;
+                    if(myWorld.positionWalkable(myPlayer.x, myPlayer.y - 1))
+                    {
+                        myPlayer.y -= 1;
+                    }
+                    
                     break;
                 case ConsoleKey.DownArrow:
-                    myPlayer.y += 1;
+                    if(myWorld.positionWalkable(myPlayer.x, myPlayer.y + 1))
+                    {
+                        myPlayer.y += 1;
+                    }
+                    
                     break;
                 case ConsoleKey.LeftArrow:
-                    myPlayer.x -= 1;
+                    if(myWorld.positionWalkable(myPlayer.x - 1, myPlayer.y))
+                    {
+                        myPlayer.x -= 1;
+                    }
                     break;
                 case ConsoleKey.RightArrow:
-                    myPlayer.x += 1;
+                    if(myWorld.positionWalkable(myPlayer.x + 1, myPlayer.y))
+                    {
+                         myPlayer.x += 1;
+                    }
+
                     break;
                 default: break;
             }
@@ -72,7 +87,7 @@ namespace CsharpMaze
                 System.Threading.Thread.Sleep(20);
 
 
-                break;
+               
             }
         }
    
