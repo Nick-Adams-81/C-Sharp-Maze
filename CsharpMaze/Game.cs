@@ -57,8 +57,14 @@ namespace CsharpMaze
          
         private void HandlePlayerInput()
         {
-            ConsoleKeyInfo keyInfo = ReadKey(true);
-            ConsoleKey key = keyInfo.Key;
+            ConsoleKey key;
+            do
+            {
+                ConsoleKeyInfo keyInfo = ReadKey(true);
+                key = keyInfo.Key;
+            } while (Console.KeyAvailable);
+
+            
             switch(key)
             {
                 case ConsoleKey.UpArrow:
