@@ -16,17 +16,8 @@ namespace CsharpMaze
             CursorVisible = false;
 
 
-            string[,] grid = LevelParser.ParseFileToArray("Level1.txt");
-            //string[,] grid =
-            //{
-            //   { "▀", "▀", "▀", "▀", "▀", "▀", "▀" },
-            //   { "▀", " ", "▀", " ", " ", " ", "X" },
-            //   { " ", " ", "▀", " ", "▀", " ", "▀" },
-            //   { "▀", " ", "▀", " ", "▀", " ", "▀" },
-            //   { "▀", " ", " ", " ", "▀", " ", "▀" },
-            //   { "▀", "▀", "▀", "▀", "▀", "▀", "▀" }
-            //};
-
+            string[,] grid = LevelParser.ParseFileToArray("Level2.txt");
+           
             myWorld = new World(grid);
             
             myPlayer = new Player(1, 2);
