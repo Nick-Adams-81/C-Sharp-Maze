@@ -4,7 +4,7 @@ namespace CsharpMaze
 {
     public class Game
     {
-        private const bool V = false;
+
         private World myWorld;
         private Player myPlayer;
        
@@ -13,22 +13,23 @@ namespace CsharpMaze
             {
 
             Title = "Welcome to the maze!!!";
-            CursorVisible = V;
-      
+            CursorVisible = false;
 
-            string[,] grid =
-            {
-               { "▀", "▀", "▀", "▀", "▀", "▀", "▀" },
-               { "▀", " ", "▀", " ", " ", " ", "X" },
-               { " ", " ", "▀", " ", "▀", " ", "▀" },
-               { "▀", " ", "▀", " ", "▀", " ", "▀" },
-               { "▀", " ", " ", " ", "▀", " ", "▀" },
-               { "▀", "▀", "▀", "▀", "▀", "▀", "▀" }
-            };
+
+            string[,] grid = LevelParser.ParseFileToArray("Level1.txt");
+            //string[,] grid =
+            //{
+            //   { "▀", "▀", "▀", "▀", "▀", "▀", "▀" },
+            //   { "▀", " ", "▀", " ", " ", " ", "X" },
+            //   { " ", " ", "▀", " ", "▀", " ", "▀" },
+            //   { "▀", " ", "▀", " ", "▀", " ", "▀" },
+            //   { "▀", " ", " ", " ", "▀", " ", "▀" },
+            //   { "▀", "▀", "▀", "▀", "▀", "▀", "▀" }
+            //};
 
             myWorld = new World(grid);
             
-            myPlayer = new Player(0, 2);
+            myPlayer = new Player(1, 2);
 
             RunGameLoop();
           
