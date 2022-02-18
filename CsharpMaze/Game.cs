@@ -4,7 +4,7 @@ namespace CsharpMaze
 {
     public class Game
     {
-
+        private const bool V = false;
         private World myWorld;
         private Player myPlayer;
        
@@ -13,17 +13,17 @@ namespace CsharpMaze
             {
 
             Title = "Welcome to the maze!!!";
-            CursorVisible = false;
+            CursorVisible = V;
       
 
             string[,] grid =
             {
-               { "=", "=", "=", "=", "=", "=", "=" },
-               { "=", " ", "=", " ", " ", " ", "X" },
-               { " ", " ", "=", " ", "=", " ", "=" },
-               { "=", " ", "=", " ", "=", " ", "=" },
-               { "=", " ", " ", " ", "=", " ", "=" },
-               { "=", "=", "=", "=", "=", "=", "=" }
+               { "▀", "▀", "▀", "▀", "▀", "▀", "▀" },
+               { "▀", " ", "▀", " ", " ", " ", "X" },
+               { " ", " ", "▀", " ", "▀", " ", "▀" },
+               { "▀", " ", "▀", " ", "▀", " ", "▀" },
+               { "▀", " ", " ", " ", "▀", " ", "▀" },
+               { "▀", "▀", "▀", "▀", "▀", "▀", "▀" }
             };
 
             myWorld = new World(grid);
